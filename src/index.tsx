@@ -1,12 +1,18 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-import "./index.css"
-import App from "./App"
-import { AppStateProvider } from "./AppStateContext"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { AppStateProvider } from "./AppStateContext";
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
-  root.render(
-	<AppStateProvider>
-    <App />
-  </AppStateProvider>,
-)
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
+root.render(
+  <DndProvider backend={HTML5Backend}>
+    <AppStateProvider>
+      <App />
+    </AppStateProvider>
+  </DndProvider>
+);

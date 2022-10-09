@@ -2,6 +2,7 @@ import { Column } from "./components/Column"
 import { AppContainer } from "./styles"
 import { useAppState } from "./AppStateContext"
 import { AddNewItem } from "./components/AddNewItem"
+import { DragItem } from "./DragItem"
 
 interface Task {
   id: string
@@ -16,6 +17,7 @@ interface List {
 
 export interface AppState {
   lists: List[]
+	draggedItem: DragItem | undefined
 }
 
 const App = () => {
